@@ -51,8 +51,7 @@ class AdminController extends Controller
         if( Auth::guard('admin')->attempt($creds) ){
             return redirect()->route('admin.home');
         }else {
-            session()->flash('fail', 'incorrect credentials');
-            return redirect()->route('admin.login');
+            return redirect()->route('admin.login')->withInput()->with('fail','Incorrect password');
         }
     }
 
@@ -119,7 +118,7 @@ class AdminController extends Controller
 
         );
 
-        if( sendMail($mailConfig)){
+        if( sendEmail($mailConfig)){
             session()->flash('success', 'yeay');
             return redirect()->route('admin.forgot-password');
         }else{

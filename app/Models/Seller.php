@@ -26,6 +26,7 @@ class Seller extends Authenticatable
         'password',
         'address',
         'phone',
+        'picture',
         'email_verified_at',
         'verified',
         'status',
@@ -55,4 +56,13 @@ class Seller extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+        public function getPictureAttribute($value){
+            if ($value){
+                return asset('images/users/sellers/'.$value);
+            }else{
+                return asset('/images/users/default.jpg');
+            }
+        }
+    
 }

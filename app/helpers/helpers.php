@@ -9,7 +9,7 @@ use App\Models\SubCategory;
 
 /**SEND EMAIL FUNCTION USING PHPMAILER LIBLARY */
 if(!function_exists('sendMail') ){
-    function sendMail($mailConfig){
+    function sendEmail($mailConfig){
         require 'PHPMailer/src/Exception.php';
         require 'PHPMailer/src/PHPMailer.php';
         require 'PHPMailer/src/SMTP.php';

@@ -43,14 +43,14 @@
 							data-toggle="dropdown"
 						>
 							<span class="user-icon">
-								<img src="{{ $admin->picture}}" alt="" />
+								<img src="{{$seller->picture}}" alt="" />
 							</span>
-							<span class="user-name">{{ $admin->name}}</span>
+							<span class="user-name">{{$seller->name}}</span>
 						</a>
 						<div
 							class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
 						>
-							<a class="dropdown-item" href="{{ route('admin.profile')}}"
+							<a class="dropdown-item" href="{{ route('seller.profile')}}"
 								><i class="dw dw-user1"></i> Profile</a
 							>
 							<a class="dropdown-item" href="profile.html"
@@ -59,9 +59,10 @@
 							<a class="dropdown-item" href="faq.html"
 								><i class="dw dw-help"></i> Help</a
 							>
-							<a class="dropdown-item" href="login.html"
+							<a class="dropdown-item" href="{{ route('seller.logout')}}" onclick="event.preventDefault();document.getElementById('sellerLogoutForm').submit();"
 								><i class="dw dw-logout"></i> Log Out</a
 							>
+							<form action="{{ route('seller.logout')}}" id="sellerLogoutForm" method="POST">@csrf</form>
 						</div>
 					</div>
 				</div>

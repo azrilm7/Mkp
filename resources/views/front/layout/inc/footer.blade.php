@@ -58,7 +58,7 @@
                         </div><!-- End .col-sm-12 col-lg-4 -->
 
                         <div class="col-sm-4 col-lg-2">
-                            <div class="widget">
+                            {{-- <div class="widget">
                                 <h4 class="widget-title">Useful Links</h4><!-- End .widget-title -->
 
                                 <ul class="widget-list">
@@ -68,11 +68,11 @@
                                     <li><a href="contact.html">Contact us</a></li>
                                     <li><a href="login.html">Log in</a></li>
                                 </ul><!-- End .widget-list -->
-                            </div><!-- End .widget -->
+                            </div><!-- End .widget --> --}}
                         </div><!-- End .col-sm-4 col-lg-2 -->
 
                         <div class="col-sm-4 col-lg-2">
-                            <div class="widget">
+                            {{-- <div class="widget">
                                 <h4 class="widget-title">Customer Service</h4><!-- End .widget-title -->
 
                                 <ul class="widget-list">
@@ -83,11 +83,11 @@
                                     <li><a href="#">Terms and conditions</a></li>
                                     <li><a href="#">Privacy Policy</a></li>
                                 </ul><!-- End .widget-list -->
-                            </div><!-- End .widget -->
+                            </div><!-- End .widget --> --}}
                         </div><!-- End .col-sm-4 col-lg-2 -->
 
                         <div class="col-sm-4 col-lg-2">
-                            <div class="widget">
+                            {{-- <div class="widget">
                                 <h4 class="widget-title">My Account</h4><!-- End .widget-title -->
 
                                 <ul class="widget-list">
@@ -97,11 +97,11 @@
                                     <li><a href="#">Track My Order</a></li>
                                     <li><a href="#">Help</a></li>
                                 </ul><!-- End .widget-list -->
-                            </div><!-- End .widget -->
+                            </div><!-- End .widget --> --}}
                         </div><!-- End .col-sm-4 col-lg-2 -->
 
                         <div class="col-sm-4 col-lg-2">
-                            <div class="widget widget-newsletter">
+                            {{-- <div class="widget widget-newsletter">
                                 <h4 class="widget-title">Sign Up to Newsletter</h4><!-- End .widget-title -->
 
                                 <p>Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan.</p>
@@ -114,7 +114,7 @@
                                         </div><!-- .End .input-group-append -->
                                     </div><!-- .End .input-group -->
                                 </form>
-                            </div><!-- End .widget -->
+                            </div><!-- End .widget --> --}}
                         </div><!-- End .col-sm-4 col-lg-2 -->
                     </div><!-- End .row -->
                 </div><!-- End .container-fluid -->

@@ -57,9 +57,9 @@ class AdminCategoriesSubcategoriesList extends Component
         $delete = $category->delete();
 
         if($delete){
-            $this->alert('succes');
+            $this->showToastr('success','ordering successfully');
         }else{
-            $this->alert('fail');
+            $this->showToastr('fail','blokk');
         }
     }
 

@@ -7,7 +7,7 @@
 							</div>
 							<form action="{{ route('admin.login_handler') }}" method="POST">
                             @csrf
-                            @if (Session::get('fall'))
+                            @if (Session::get('fail'))
                             <div class="alert alert-danger">
                                 {{Session::get('fail')}}
 

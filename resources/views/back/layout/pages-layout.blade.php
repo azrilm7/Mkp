@@ -7,7 +7,7 @@
 		<title>@yield('pageTitle')</title>
 
 		<!-- Site favicon -->
-		
+		<meta name="csrf-token" content="{{ csrf_token() }}">
 		<link
 			rel="icon"
 			type="image/png"
@@ -53,11 +53,13 @@
 		<link rel="stylesheet" href="/extra-assets/jquery-ui-1.13.2/jquery-ui.min.css">
 		<link rel="stylesheet" href="/extra-assets/jquery-ui-1.13.2/jquery-ui.structure.min.css">
 		<link rel="stylesheet" href="/extra-assets/jquery-ui-1.13.2/jquery-ui.theme.min.css">
+		<link rel="stylesheet" href="/extra-assets/summernote/summernote-bs4.min.css">
 		<style>
 			.swal2-popup{
 				font-size: 0.78em;
 			}
 		</style>
+		@kropifyStyles
 		@livewireStyles
         @stack('stylesheets')
 	</head>
@@ -463,7 +465,7 @@
 						</li>
 						@else
 						<li>
-							<a href="{{ route('admin.home') }}" class="dropdown-toggle no-arrow">
+							<a href="{{ route('seller.home') }}" class="dropdown-toggle no-arrow {{ Route::is('seller.home') ? 'active': ''}}">
 								<span class="micon fa fa-home"></span
 								><span class="mtext">Home</span>
 							</a>
@@ -474,6 +476,17 @@
 								><span class="mtext">Invoice</span>
 							</a>
 						</li>
+
+                        <li class="dropdown">
+							<a href="javascript:;" class="dropdown-toggle {{Route::is('seller.product.*') ? 'active' : ''}}" >
+								<span class="micon bi bi-bag"></span><span class="mtext">Manage products</span>
+							</a>
+							<ul class="submenu">
+								<li><a href="{{route('seller.product.all-products')}}" class="{{Route::is('seller.product.all-products') ? 'active' : ''}}">All product</a></li>
+								<li><a href="{{route('seller.product.add-product')}}" class="{{Route::is('seller.product.add-product') ? 'active' : ''}}">Add product</a></li>
+							</ul>
+						</li>
+
 						<li>
 							<div class="dropdown-divider"></div>
 						</li>
@@ -482,12 +495,23 @@
 						</li>
 						<li>
 							<a
-								href=""
-								class="dropdown-toggle no-arrow"
+								href="{{route('seller.profile')}}"
+								class="dropdown-toggle no-arrow {{ Route::is('seller.profile') ? 'active': ''}}"
 							>
 								<span class="micon fa fa-user"></span>
 								<span class="mtext"
 									>Profile
+								</span>
+							</a>
+						</li>
+						<li>
+							<a
+								href="{{route('seller.shop-settings')}}"
+								class="dropdown-toggle no-arrow {{ Route::is('seller.shop-settings') ? 'active': ''}}"
+							>
+								<span class="micon bi bi-shop"></span>
+								<span class="mtext"
+									>Shop settings
 								</span>
 							</a>
 						</li>
@@ -521,6 +545,14 @@
 		<script src="/back/vendors/scripts/layout-settings.js"></script>
 		<script src="/extra-assets/ijaboCropTool/ijaboCropTool.min.js"></script>
 		<script src="/extra-assets/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+		<script src="/extra-assets/summernote/summernote-bs4.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('.summernote').summernote({
+					height:200
+				});
+			});
+		</script>
 		<script src=
 "https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 		<script>
@@ -556,7 +588,7 @@
 	// 	});
 	// });
 		</script>
-		
+		@kropifyScripts
 		@livewireScripts
 		@stack('scripts')
 	</body>
